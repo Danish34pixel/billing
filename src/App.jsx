@@ -50,19 +50,31 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <div
+      className="min-h-screen"
+      style={{
+        background:
+          "linear-gradient(to bottom right, #310A31, #6B4C6B, #F4ECD6)",
+      }}
+    >
       {/* FORM SECTION */}
       <div className="print:hidden max-w-7xl mx-auto p-6">
         <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden backdrop-blur-sm">
           {/* Form Header */}
-          <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-8 py-8 relative overflow-hidden">
-            <div className="absolute inset-0 bg-black opacity-5"></div>
+          <div
+            className="px-8 py-8 relative overflow-hidden"
+            style={{
+              background:
+                "linear-gradient(to right, #310A31, #4A1F4A, #5E335E)",
+            }}
+          >
+            <div className="absolute inset-0 bg-black opacity-10"></div>
             <div className="relative z-10">
               <h2 className="text-3xl font-bold text-white flex items-center gap-3 mb-2">
                 <Building2 className="w-8 h-8" />
                 Create New Estimate
               </h2>
-              <p className="text-blue-100 text-sm">
+              <p className="text-amber-50 text-sm">
                 Fill in the details to generate a professional estimate
               </p>
             </div>
@@ -72,7 +84,12 @@ const App = () => {
             {/* Customer Details */}
             <div className="mb-8">
               <h3 className="text-xl font-bold text-slate-800 mb-5 flex items-center gap-2">
-                <div className="w-1 h-6 bg-gradient-to-b from-blue-600 to-indigo-600 rounded-full"></div>
+                <div
+                  className="w-1 h-6 rounded-full"
+                  style={{
+                    background: "linear-gradient(to bottom, #310A31, #5E335E)",
+                  }}
+                ></div>
                 Customer Information
               </h3>
               <div className="grid md:grid-cols-2 gap-5">
@@ -81,7 +98,8 @@ const App = () => {
                     Customer Name *
                   </label>
                   <input
-                    className="w-full border-2 border-slate-200 px-4 py-3 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all hover:border-slate-300 bg-slate-50 focus:bg-white"
+                    className="w-full border-2 border-slate-200 px-4 py-3 rounded-xl focus:ring-2 focus:border-slate-300 transition-all hover:border-slate-300 bg-slate-50 focus:bg-white"
+                    style={{ focusRingColor: "#5E335E" }}
                     placeholder="Enter customer name"
                     value={customerName}
                     onChange={(e) => setCustomerName(e.target.value)}
@@ -92,7 +110,7 @@ const App = () => {
                     Mobile Number *
                   </label>
                   <input
-                    className="w-full border-2 border-slate-200 px-4 py-3 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all hover:border-slate-300 bg-slate-50 focus:bg-white"
+                    className="w-full border-2 border-slate-200 px-4 py-3 rounded-xl focus:ring-2 focus:border-slate-300 transition-all hover:border-slate-300 bg-slate-50 focus:bg-white"
                     placeholder="Enter mobile number"
                     value={mobile}
                     onChange={(e) => setMobile(e.target.value)}
@@ -104,7 +122,12 @@ const App = () => {
             {/* Item Entry */}
             <div className="border-t-2 border-slate-100 pt-8">
               <h3 className="text-xl font-bold text-slate-800 mb-5 flex items-center gap-2">
-                <div className="w-1 h-6 bg-gradient-to-b from-blue-600 to-indigo-600 rounded-full"></div>
+                <div
+                  className="w-1 h-6 rounded-full"
+                  style={{
+                    background: "linear-gradient(to bottom, #310A31, #5E335E)",
+                  }}
+                ></div>
                 Add Items
               </h3>
               <div className="grid md:grid-cols-12 gap-3 mb-4">
@@ -113,7 +136,7 @@ const App = () => {
                     Item Name *
                   </label>
                   <input
-                    className="w-full border-2 border-slate-200 px-3 py-2.5 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all hover:border-slate-300 bg-slate-50 focus:bg-white"
+                    className="w-full border-2 border-slate-200 px-3 py-2.5 rounded-xl text-sm focus:ring-2 focus:border-slate-300 transition-all hover:border-slate-300 bg-slate-50 focus:bg-white"
                     placeholder="Item description"
                     value={item}
                     onChange={(e) => setItem(e.target.value)}
@@ -124,7 +147,7 @@ const App = () => {
                     HSN Code
                   </label>
                   <input
-                    className="w-full border-2 border-slate-200 px-3 py-2.5 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all hover:border-slate-300 bg-slate-50 focus:bg-white"
+                    className="w-full border-2 border-slate-200 px-3 py-2.5 rounded-xl text-sm focus:ring-2 focus:border-slate-300 transition-all hover:border-slate-300 bg-slate-50 focus:bg-white"
                     placeholder="HSN"
                     value={hsn}
                     onChange={(e) => setHsn(e.target.value)}
@@ -135,7 +158,7 @@ const App = () => {
                     Quantity *
                   </label>
                   <input
-                    className="w-full border-2 border-slate-200 px-3 py-2.5 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all hover:border-slate-300 bg-slate-50 focus:bg-white"
+                    className="w-full border-2 border-slate-200 px-3 py-2.5 rounded-xl text-sm focus:ring-2 focus:border-slate-300 transition-all hover:border-slate-300 bg-slate-50 focus:bg-white"
                     type="number"
                     min="1"
                     value={qty}
@@ -147,7 +170,7 @@ const App = () => {
                     Unit
                   </label>
                   <input
-                    className="w-full border-2 border-slate-200 px-3 py-2.5 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all hover:border-slate-300 bg-slate-50 focus:bg-white"
+                    className="w-full border-2 border-slate-200 px-3 py-2.5 rounded-xl text-sm focus:ring-2 focus:border-slate-300 transition-all hover:border-slate-300 bg-slate-50 focus:bg-white"
                     placeholder="PCS"
                     value={unit}
                     onChange={(e) => setUnit(e.target.value)}
@@ -158,7 +181,7 @@ const App = () => {
                     Price (₹) *
                   </label>
                   <input
-                    className="w-full border-2 border-slate-200 px-3 py-2.5 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all hover:border-slate-300 bg-slate-50 focus:bg-white"
+                    className="w-full border-2 border-slate-200 px-3 py-2.5 rounded-xl text-sm focus:ring-2 focus:border-slate-300 transition-all hover:border-slate-300 bg-slate-50 focus:bg-white"
                     type="number"
                     min="0"
                     step="0.01"
@@ -170,7 +193,14 @@ const App = () => {
                 <div className="md:col-span-1 flex items-end">
                   <button
                     onClick={addItem}
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-4 py-2.5 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    className="w-full text-white px-4 py-2.5 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    style={{
+                      background: "linear-gradient(to right, #310A31, #5E335E)",
+                      hover: {
+                        background:
+                          "linear-gradient(to right, #4A1F4A, #6B4C6B)",
+                      },
+                    }}
                   >
                     <Plus className="w-4 h-4" />
                     Add
@@ -181,22 +211,41 @@ const App = () => {
 
             {/* Items Preview */}
             {items.length > 0 && (
-              <div className="mt-6 bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-6 border-2 border-slate-200">
+              <div
+                className="mt-6 rounded-2xl p-6 border-2 border-slate-200"
+                style={{
+                  background:
+                    "linear-gradient(to bottom right, #FDFBF7, #F4ECD6)",
+                }}
+              >
                 <h3 className="text-sm font-bold text-slate-700 mb-4 flex items-center gap-2">
-                  <div className="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                  <div
+                    className="w-2 h-2 rounded-full"
+                    style={{ backgroundColor: "#5E335E" }}
+                  ></div>
                   Added Items ({items.length})
                 </h3>
                 <div className="space-y-2">
                   {items.map((i, idx) => (
                     <div
                       key={idx}
-                      className="bg-white rounded-xl p-4 flex items-center justify-between border-2 border-slate-100 hover:border-indigo-300 hover:shadow-md transition-all"
+                      className="bg-white rounded-xl p-4 flex items-center justify-between border-2 border-slate-100 hover:shadow-md transition-all"
+                      style={{ borderColor: "#E5E7EB" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.borderColor = "#5E335E")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.borderColor = "#E5E7EB")
+                      }
                     >
                       <div className="flex-1">
                         <p className="font-semibold text-slate-800">{i.item}</p>
                         <p className="text-xs text-slate-500 mt-1">
                           {i.qty} {i.unit} × ₹{i.price.toFixed(2)} ={" "}
-                          <span className="font-semibold text-indigo-600">
+                          <span
+                            className="font-semibold"
+                            style={{ color: "#5E335E" }}
+                          >
                             ₹{i.amount.toFixed(2)}
                           </span>
                         </p>
@@ -220,7 +269,11 @@ const App = () => {
           <div className="mt-8 text-center">
             <button
               onClick={generatePDF}
-              className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 hover:from-green-700 hover:via-emerald-700 hover:to-teal-700 text-white px-12 py-5 rounded-2xl font-bold shadow-2xl hover:shadow-green-500/50 transition-all flex items-center gap-3 mx-auto text-lg transform hover:scale-105"
+              className="text-white px-12 py-5 rounded-2xl font-bold shadow-2xl transition-all flex items-center gap-3 mx-auto text-lg transform hover:scale-105"
+              style={{
+                background:
+                  "linear-gradient(to right, #310A31, #5E335E, #6B4C6B)",
+              }}
             >
               <FileDown className="w-6 h-6" />
               Generate PDF Estimate
@@ -237,8 +290,14 @@ const App = () => {
             className="bg-white max-w-4xl mx-auto p-12 shadow-2xl"
           >
             {/* Header */}
-            <div className="text-center border-b-4 border-indigo-600 pb-6 mb-6">
-              <h1 className="text-4xl font-bold text-indigo-900 tracking-tight mb-3">
+            <div
+              className="text-center pb-6 mb-6"
+              style={{ borderBottom: "4px solid #5E335E" }}
+            >
+              <h1
+                className="text-4xl font-bold tracking-tight mb-3"
+                style={{ color: "#310A31" }}
+              >
                 SARVODAYA INTERIOR
               </h1>
               <div className="text-sm text-slate-600 space-y-1 max-w-3xl mx-auto">
@@ -250,7 +309,10 @@ const App = () => {
                   📍 2. Infront of Police Station B.K Marriage House Dukan No 3,
                   Harpalpur, Distt Chhatarpur
                 </p>
-                <div className="flex items-center justify-center gap-6 mt-3 text-indigo-700 font-medium">
+                <div
+                  className="flex items-center justify-center gap-6 mt-3 font-medium"
+                  style={{ color: "#5E335E" }}
+                >
                   <span className="flex items-center gap-1">
                     <Phone className="w-3 h-3" />
                     7753077270, 7869687315
@@ -273,7 +335,10 @@ const App = () => {
             {/* Info Grid */}
             <div className="grid grid-cols-2 gap-8 mb-8 text-sm">
               <div className="bg-slate-50 p-4 rounded-lg">
-                <h3 className="font-semibold text-indigo-700 mb-2 text-xs uppercase tracking-wide">
+                <h3
+                  className="font-semibold mb-2 text-xs uppercase tracking-wide"
+                  style={{ color: "#5E335E" }}
+                >
                   Estimate For:
                 </h3>
                 <p className="font-bold text-slate-900 text-lg">
@@ -284,7 +349,10 @@ const App = () => {
                 </p>
               </div>
               <div className="bg-slate-50 p-4 rounded-lg text-right">
-                <h3 className="font-semibold text-indigo-700 mb-2 text-xs uppercase tracking-wide">
+                <h3
+                  className="font-semibold mb-2 text-xs uppercase tracking-wide"
+                  style={{ color: "#5E335E" }}
+                >
                   Document Details:
                 </h3>
                 <p className="text-slate-600">
@@ -305,23 +373,44 @@ const App = () => {
             {/* Table */}
             <table className="w-full mb-6 text-sm border-collapse">
               <thead>
-                <tr className="bg-indigo-700 text-white">
-                  <th className="border border-indigo-600 p-3 text-center w-12">
+                <tr
+                  className="text-white"
+                  style={{ backgroundColor: "#310A31" }}
+                >
+                  <th
+                    className="border p-3 text-center w-12"
+                    style={{ borderColor: "#5E335E" }}
+                  >
                     #
                   </th>
-                  <th className="border border-indigo-600 p-3 text-left">
+                  <th
+                    className="border p-3 text-left"
+                    style={{ borderColor: "#5E335E" }}
+                  >
                     Item Description
                   </th>
-                  <th className="border border-indigo-600 p-3 text-center w-24">
+                  <th
+                    className="border p-3 text-center w-24"
+                    style={{ borderColor: "#5E335E" }}
+                  >
                     HSN
                   </th>
-                  <th className="border border-indigo-600 p-3 text-center w-20">
+                  <th
+                    className="border p-3 text-center w-20"
+                    style={{ borderColor: "#5E335E" }}
+                  >
                     Qty
                   </th>
-                  <th className="border border-indigo-600 p-3 text-right w-28">
+                  <th
+                    className="border p-3 text-right w-28"
+                    style={{ borderColor: "#5E335E" }}
+                  >
                     Rate (₹)
                   </th>
-                  <th className="border border-indigo-600 p-3 text-right w-32">
+                  <th
+                    className="border p-3 text-right w-32"
+                    style={{ borderColor: "#5E335E" }}
+                  >
                     Amount (₹)
                   </th>
                 </tr>
@@ -370,7 +459,10 @@ const App = () => {
                     <span className="font-medium">SGST (9%):</span>
                     <span className="font-semibold">₹ {sgst.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between text-lg font-bold text-indigo-900 pt-2">
+                  <div
+                    className="flex justify-between text-lg font-bold pt-2"
+                    style={{ color: "#310A31" }}
+                  >
                     <span>Grand Total:</span>
                     <span>₹ {grandTotal.toFixed(2)}</span>
                   </div>
