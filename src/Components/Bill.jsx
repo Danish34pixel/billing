@@ -64,14 +64,17 @@ const Bill = ({ handleLogout }) => {
   const saveBill = async (bill) => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/bills", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          ...(token ? { Authorization: `Bearer ${token}` } : {}),
-        },
-        body: JSON.stringify(bill),
-      });
+      const res = await fetch(
+        "https://companybackend-nu9b.onrender.com/api/bills",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            ...(token ? { Authorization: `Bearer ${token}` } : {}),
+          },
+          body: JSON.stringify(bill),
+        }
+      );
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         console.error("Save bill failed:", res.status, data);

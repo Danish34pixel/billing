@@ -12,11 +12,14 @@ const Signup = ({ onSuccess }) => {
     setIsLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone, email, password }),
-      });
+      const res = await fetch(
+        "https://companybackend-nu9b.onrender.com/api/auth/signup",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ phone, email, password }),
+        }
+      );
       const data = await res.json();
 
       if (res.ok) {
