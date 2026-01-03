@@ -6,6 +6,7 @@ const Login = ({ onLogin }) => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     setMessage("");
