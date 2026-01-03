@@ -61,17 +61,18 @@ const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
 
   const handleSignupSuccess = () => {
-    window.location.href = "/login";
+    // Use hash navigation so static hosts (Vercel) don't request /login from the server
+    window.location.hash = "/login";
   };
   const handleLoginSuccess = (tok) => {
     setToken(tok);
     localStorage.setItem("token", tok);
-    window.location.href = "/bills";
+    window.location.hash = "/bills";
   };
   const handleLogout = () => {
     setToken("");
     localStorage.removeItem("token");
-    window.location.href = "/login";
+    window.location.hash = "/login";
   };
 
   // Routing
