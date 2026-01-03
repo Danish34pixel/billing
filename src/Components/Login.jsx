@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState("");
@@ -25,8 +25,8 @@ const Login = ({ onLogin }) => {
       if (res.ok && data.token) {
         setMessage("Login successful!");
         if (onLogin) onLogin(data.token);
-        // Note: localStorage is not available in Claude artifacts
-        // In production, use: localStorage.setItem("token", data.token);
+        // Navigate to bills route using react-router
+        navigate("/bills");
       } else {
         setMessage(data.message || "Login failed");
       }
@@ -189,5 +189,7 @@ const Login = ({ onLogin }) => {
     </div>
   );
 };
+
+export default Login;
 
 export default Login;

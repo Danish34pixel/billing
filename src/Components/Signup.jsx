@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = ({ onSuccess }) => {
   const [phone, setPhone] = useState("");
@@ -26,6 +26,8 @@ const Signup = ({ onSuccess }) => {
       if (res.ok) {
         setMessage("Signup successful! Please login.");
         if (onSuccess) onSuccess();
+        // Navigate to login route using react-router
+        navigate("/login");
       } else {
         setMessage(data.message || "Signup failed");
       }
@@ -36,6 +38,8 @@ const Signup = ({ onSuccess }) => {
       setIsLoading(false);
     }
   };
+
+  const navigate = useNavigate();
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {

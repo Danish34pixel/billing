@@ -61,17 +61,16 @@ const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
 
   const handleSignupSuccess = () => {
-    // Use hash navigation so static hosts (Vercel) don't request /login from the server
-    window.location.hash = "/login";
+    // Navigation is handled inside the Signup component via useNavigate()
   };
   const handleLoginSuccess = (tok) => {
     setToken(tok);
     localStorage.setItem("token", tok);
-    window.location.hash = "/bills";
   };
   const handleLogout = () => {
     setToken("");
     localStorage.removeItem("token");
+    // Keep hash navigation for logout to ensure host compatibility
     window.location.hash = "/login";
   };
 
