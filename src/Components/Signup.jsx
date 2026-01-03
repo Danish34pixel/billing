@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Signup = ({ onSuccess }) => {
   const [phone, setPhone] = useState("");
@@ -135,16 +136,12 @@ const Signup = ({ onSuccess }) => {
             <div className="mt-6 text-center">
               <p className="text-stone-400 text-sm">
                 Already have an account?{" "}
-                <a
-                  href="/login"
+                <Link
+                  to="/login"
                   className="text-amber-200 hover:text-amber-300 font-medium transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href = "/login";
-                  }}
                 >
                   Log in
-                </a>
+                </Link>
               </p>
             </div>
           </div>
