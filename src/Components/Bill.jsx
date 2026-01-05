@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import logo from "/seal.png";
+import signature from "/signaturebill-removebg-preview.png";
+
 import { Trash2, Plus, FileDown, Phone, Mail } from "lucide-react";
 
 const Bill = ({ handleLogout }) => {
@@ -102,6 +105,14 @@ const Bill = ({ handleLogout }) => {
       <div className="min-h-screen bg-gradient-to-br from-stone-900 via-rose-950 to-stone-900">
         {/* Form Section */}
         <div className="print:hidden max-w-7xl mx-auto p-6 pt-20">
+          {/* Logo */}
+          <div className="flex justify-center mb-6">
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-20 w-20 rounded-full shadow-lg border-4 border-amber-200 bg-white object-cover"
+            />
+          </div>
           {/* Decorative Header */}
           <div className="text-center mb-8">
             <h1 className="text-5xl font-bold bg-gradient-to-r from-amber-200 to-stone-300 bg-clip-text text-transparent mb-2">
@@ -440,6 +451,24 @@ const Bill = ({ handleLogout }) => {
                 </div>
                 <div className="text-right">
                   <div className="inline-block">
+                    <div className="relative w-20 h-20 mx-auto mb-2">
+                      <img
+                        src={logo}
+                        alt="Seal"
+                        className="absolute inset-0 w-full h-full rounded-full border-2 border-amber-200 bg-white object-cover opacity-80"
+                        style={{ zIndex: 0 }}
+                      />
+                      <img
+                        src={signature}
+                        alt="Signature"
+                        className="absolute inset-0 w-full h-full object-contain p-2"
+                        style={{
+                          zIndex: 1,
+                          opacity: 1,
+                          filter: "drop-shadow(0 0 2px #000)",
+                        }}
+                      />
+                    </div>
                     <p className="text-xs text-slate-500 mb-8">
                       Authorized Signatory
                     </p>

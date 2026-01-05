@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from "../assets/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = ({ onLogin }) => {
@@ -51,6 +52,14 @@ const Login = ({ onLogin }) => {
         {/* Decorative frame */}
         <div className="bg-gradient-to-br from-amber-100 to-stone-200 p-1 rounded-2xl shadow-2xl">
           <div className="bg-gradient-to-br from-rose-950 to-stone-900 rounded-2xl p-8">
+            {/* Logo */}
+            <div className="flex justify-center mb-6">
+              <img
+                src="/logobill-removebg-preview.png"
+                alt="Logo"
+                className="h-20 w-20 rounded-full shadow-lg border-4 border-amber-200 bg-white object-cover"
+              />
+            </div>
             {/* Header */}
             <div className="text-center mb-8">
               <h2 className="text-4xl font-bold bg-gradient-to-r from-amber-200 to-stone-300 bg-clip-text text-transparent mb-2">
